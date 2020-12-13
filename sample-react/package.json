@@ -1,16 +1,16 @@
 {
-  "name": "sample",
+  "name": "freepi-sample-reactapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "freepi": "file:../../free-api-library",
+    "freepi": "file:../../../free-api-library",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
-    "rollup-sample": "file:../../sample-libraries/rollup-sample",
+    "rollup-sample": "file:../../../sample-libraries/rollup-sample",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

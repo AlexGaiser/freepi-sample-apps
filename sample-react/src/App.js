@@ -4,21 +4,16 @@ import './App.css';
 import {useEffect} from 'react'
 
 import rollupSample from 'rollup-sample'
-
 import { JSONPlaceholder } from 'freepi'
 
 const jsonWrapper = new JSONPlaceholder()
-
-
 function App() {
   useEffect(() => {
-  
+      
       console.log('running')
       jsonWrapper.getTodoById('nu').then((data)=>{
-        if(data.response.status >= 400) {
-          throw new Error(data)
-        }
-        console.log(data.response)
+        console.log('data',data)
+
       })
       .catch((error)=> {
         if (error.response) {
