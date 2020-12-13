@@ -5,6 +5,9 @@ import {useEffect} from 'react'
 
 import rollupSample from 'rollup-sample'
 import { JSONPlaceholder } from 'freepi'
+import freepi from 'freepi'
+
+const { JSONPlaceholder } = freepi
 
 const jsonWrapper = new JSONPlaceholder()
 function App() {
