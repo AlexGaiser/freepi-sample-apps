@@ -1,4 +1,3 @@
-const rollupSample = require("rollup-sample");
 // const { JSONPlaceholder } = require("@freepi/JSONPlaceholder");
 const { JSONPlaceholder } = require("freepi");
 const jsonWrapper = new JSONPlaceholder();
