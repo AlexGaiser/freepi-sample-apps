@@ -3,8 +3,6 @@ import "./App.css";
 
 import { useEffect, useState } from "react";
 
-import rollupSample from "rollup-sample";
-// import JSONPlaceholder from "@freepi/jsonplaceholder";
 import { RequestBuilder } from "@freepi/core";
 import { JSONPlaceholder } from "freepi";
 
