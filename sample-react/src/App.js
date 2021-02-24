@@ -77,9 +77,7 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          {rollupSample.eat("nachos")}
-        </a>
+        ></a>
       </header>
     </div>
   );
