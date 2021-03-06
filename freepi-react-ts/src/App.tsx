@@ -14,14 +14,16 @@ function App() {
       .then((data) => console.log(data.data[0]));
     jsonWrap.comments.findAll().then((data) => console.log(data));
 
-    const req = new RequestBuilder("https://jsonplaceholder.typicode.com");
+    const req = new RequestBuilder({
+      url: "https://jsonplaceholder.typicode.com",
+    });
     req
       .extendURL("/todos")
-      .extendURL("/1")
-      .setReqMethod("get")
-      .buildRequest()
-      .sendRequest()
-      .then((data) => console.log(data));
+      .extendURL("/2")
+      .setMethod("get")
+      .build()
+      .send()
+      .then((data) => console.log(data.data));
     return () => {};
   }, []);
 

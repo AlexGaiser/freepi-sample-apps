@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@freepi/core": "^2.0.5-alpha.0",
     "@freepi/jsonplaceholder": "0.0.11",
     "freepi": "0.0.1"
   }
