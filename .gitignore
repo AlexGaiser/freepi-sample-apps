@@ -3,3 +3,4 @@ node_modules/
 .idea/
 *.swp
 .DS_Store
+.env

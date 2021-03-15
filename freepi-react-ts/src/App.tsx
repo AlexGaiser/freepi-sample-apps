@@ -1,12 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
 import logo from "./logo.svg";
 import "./App.css";
 // import { JSONPlaceholder } from "freepi";
-import { RequestBuilder } from "@freepi/core";
-import JSONPlaceholder from "@freepi/jsonplaceholder";
+import { RequestBuilder, requests } from "@freepi/core";
+// import JSONPlaceholder from "@freepi/jsonplaceholder";
+import Unsplash from "@freepi/unsplash";
+
+import { JSONPlaceholder } from "freepi";
+
 const jsonWrap = new JSONPlaceholder();
 
+const access_key: string = process.env.REACT_APP_UNSPLASH_CLIENT_ID
+  ? process.env.REACT_APP_UNSPLASH_CLIENT_ID
+  : "";
+const un = new Unsplash({
+  access_key,
+});
+const { likePhoto } = un.photos;
 function App() {
+  const [photo, setPhoto] = useState<any>();
+  const [randomPhotos, setRandomPhotos] = useState<any>();
   useEffect(() => {
     jsonWrap.posts.getById(1).then((data) => data);
     jsonWrap.todos
@@ -24,6 +38,20 @@ function App() {
       .build()
       .send()
       .then((data) => console.log(data.data));
+    un.photos.search({ query: "cat" }).then((res) => {
+      console.log(res.data);
+      setPhoto(res.data.results[0]);
+    });
+    un.photos
+      .getRandom({
+        query: "dog",
+        color: "blue",
+        count: 50,
+      })
+      .then((data) => {
+        console.log(data.data);
+        setRandomPhotos(data.data);
+      });
     return () => {};
   }, []);
 
@@ -34,6 +62,19 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        {photo ? (
+          <img
+            src={photo.urls.regular}
+            onClick={() =>
+              likePhoto(photo.id).then((data) => console.log(data))
+            }
+          />
+        ) : null}
+        {randomPhotos
+          ? randomPhotos.map((item: any) => {
+              return <img src={item.urls.regular} />;
+            })
+          : null}
         <a
           className="App-link"
           href="https://reactjs.org"
