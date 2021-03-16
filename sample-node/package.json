@@ -10,8 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@freepi/core": "^2.0.5-alpha.0",
-    "@freepi/jsonplaceholder": "0.0.11",
-    "freepi": "0.0.1"
+    "@freepi/core": "^2.2.1-alpha.0",
+    "@freepi/jsonplaceholder": "^2.2.1-alpha.0",
+    "@freepi/unsplash": "^2.2.1-alpha.0",
+    "dotenv": "^8.2.0",
+    "freepi": "^2.2.1-alpha.0",
+    "unsplash-js": "^7.0.4"
   }
 }
