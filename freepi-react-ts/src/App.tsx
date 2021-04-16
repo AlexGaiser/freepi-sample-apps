@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-
 import logo from "./logo.svg";
 import "./App.css";
-// import { JSONPlaceholder } from "freepi";
+import { Button } from "@material-ui/core";
 import { RequestBuilder, requests } from "@freepi/core";
-// import JSONPlaceholder from "@freepi/jsonplaceholder";
-import Unsplash from "@freepi/unsplash";
+// import { Unsplash } from "@freepi/unsplash";
 
-import { JSONPlaceholder } from "freepi";
+import { JSONPlaceholder, DinoIpsum, Unsplash } from "freepi";
+
+const di = new DinoIpsum();
 
 const jsonWrap = new JSONPlaceholder();
 
@@ -27,7 +27,7 @@ function App() {
       .find({ userId: 1 })
       .then((data) => console.log(data.data[0]));
     jsonWrap.comments.findAll().then((data) => console.log(data));
-
+    di.getDinoIpsum("json", 10, 200).then((data) => console.log(data));
     const req = new RequestBuilder({
       url: "https://jsonplaceholder.typicode.com",
     });
